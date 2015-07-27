@@ -24,7 +24,7 @@ public class RealisticBiomeCoastMangrove extends RealisticBiomeBase
 {
 	public RealisticBiomeCoastMangrove() 
 	{
-		super(0, RWGBiomes.baseOceanOasis);
+		super(0, RWGBiomes.baseOceanOasis, "rwg_CoastMangrove");
 	}
 	
 	@Override

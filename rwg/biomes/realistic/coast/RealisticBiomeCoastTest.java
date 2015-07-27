@@ -29,7 +29,7 @@ public class RealisticBiomeCoastTest extends RealisticBiomeBase
 {
 	public RealisticBiomeCoastTest() 
 	{
-		super(0, RWGBiomes.baseRiverOasis);
+		super(0, RWGBiomes.baseRiverOasis, "rwg_CoastTest");
 	}
 	
 	@Override

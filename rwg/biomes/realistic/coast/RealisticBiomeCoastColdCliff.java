@@ -15,7 +15,7 @@ public class RealisticBiomeCoastColdCliff extends RealisticBiomeBase
 {
 	public RealisticBiomeCoastColdCliff() 
 	{
-		super(0, RWGBiomes.baseOceanTemperate);
+		super(0, RWGBiomes.baseOceanTemperate, "rwg_CoastColdCliff");
 	}
 	
 	@Override

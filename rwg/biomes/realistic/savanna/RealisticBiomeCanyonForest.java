@@ -14,6 +14,7 @@ import net.minecraft.world.gen.feature.WorldGenShrub;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import rwg.api.RWGBiomes;
 import rwg.biomes.realistic.RealisticBiomeBase;
+import rwg.config.ConfigRWG;
 import rwg.deco.DecoCacti;
 import rwg.deco.DecoFlowers;
 import rwg.deco.DecoGrass;
@@ -32,7 +33,7 @@ public class RealisticBiomeCanyonForest extends RealisticBiomeBase
 	
 	public RealisticBiomeCanyonForest() 
 	{
-		super(0, RWGBiomes.baseHotForest, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverOasis);
+		super(0, RWGBiomes.baseHotForest, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverOasis, "rwg_CanyonForest");
 
 		terrain = new TerrainCanyon(true, 35f, 160f, 60f, 40f, 69f);
 		surface = new SurfaceCanyon(Blocks.sand, Blocks.sand, (byte)1, 47);
@@ -41,14 +42,16 @@ public class RealisticBiomeCanyonForest extends RealisticBiomeBase
 	@Override
     public void rDecorate(World world, Random rand, int chunkX, int chunkY, PerlinNoise perlin, CellNoise cell, float strength, float river)
     {
-		for (int l = 0; l < 1f * strength; ++l)
-		{
-			int i1 = chunkX + rand.nextInt(16) + 8;
-			int j1 = chunkY + rand.nextInt(16) + 8;
-		    int k1 = world.getHeightValue(i1, j1);
-			if(k1 < 70)
+		if ( ConfigRWG.enableCobblestoneBoulders ) {
+			for (int l = 0; l < 1f * strength; ++l)
 			{
-		    	(new WorldGenBlockBlob(Blocks.mossy_cobblestone, 0)).generate(world, rand, i1, k1, j1);
+				int i1 = chunkX + rand.nextInt(16) + 8;
+				int j1 = chunkY + rand.nextInt(16) + 8;
+				int k1 = world.getHeightValue(i1, j1);
+				if(k1 < 70)
+				{
+					(new WorldGenBlockBlob(Blocks.mossy_cobblestone, 0)).generate(world, rand, i1, k1, j1);
+				}
 			}
 		}
 		

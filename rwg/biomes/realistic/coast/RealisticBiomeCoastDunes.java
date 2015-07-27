@@ -17,7 +17,7 @@ public class RealisticBiomeCoastDunes extends RealisticBiomeBase
 {
 	public RealisticBiomeCoastDunes() 
 	{
-		super(0, RWGBiomes.baseOceanTemperate);
+		super(0, RWGBiomes.baseOceanTemperate, "rwg_CoastDunes");
 	}
 	
 	@Override

@@ -34,7 +34,7 @@ public class RealisticBiomeRedwood extends RealisticBiomeBase
 
 	public RealisticBiomeRedwood() 
 	{
-		super(0, RWGBiomes.baseColdForest, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverCold);
+		super(0, RWGBiomes.baseColdForest, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverCold, "rwg_Redwood");
 		
 		terrain = new TerrainHilly(230f, 120f, 90f);
 		surface = new SurfaceMountainStone(Blocks.grass, Blocks.dirt, true, Blocks.sand, 0.2f);

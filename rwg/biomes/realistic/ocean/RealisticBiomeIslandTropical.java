@@ -31,7 +31,7 @@ public class RealisticBiomeIslandTropical extends RealisticBiomeBase
 	
 	public RealisticBiomeIslandTropical() 
 	{
-		super(0, RWGBiomes.baseOceanWet);
+		super(0, RWGBiomes.baseOceanWet, "rwg_IslandTropical");
 		
 		surface = new SurfaceIslandMountainStone(Blocks.grass, Blocks.dirt, 67, Blocks.sand, 0f);
 	}

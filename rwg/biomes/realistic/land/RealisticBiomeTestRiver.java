@@ -32,7 +32,7 @@ public class RealisticBiomeTestRiver extends RealisticBiomeBase
     
 	public RealisticBiomeTestRiver() 
 	{
-		super(0, RWGBiomes.baseHotPlains);
+		super(0, RWGBiomes.baseHotPlains, "rwg_TestRiver");
 
 		celltest = new CellNoise(0, (short)0);
 		//celltest.setUseDistance(true);

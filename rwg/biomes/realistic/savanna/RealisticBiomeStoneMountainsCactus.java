@@ -13,6 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenShrub;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import rwg.api.RWGBiomes;
 import rwg.biomes.realistic.RealisticBiomeBase;
+import rwg.config.ConfigRWG;
 import rwg.deco.DecoCacti;
 import rwg.deco.DecoFlowers;
 import rwg.deco.DecoGrass;
@@ -33,7 +34,7 @@ public class RealisticBiomeStoneMountainsCactus extends RealisticBiomeBase
 
 	public RealisticBiomeStoneMountainsCactus()
 	{
-		super(0, RWGBiomes.baseHotPlains, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverOasis);
+		super(0, RWGBiomes.baseHotPlains, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverOasis, "rwg_StoneMountainsCactus");
 		terrain = new TerrainHilly(230f, 120f, 0f);
 		surface = new SurfaceMountainStoneMix1(Blocks.grass, Blocks.dirt, false, null, 0f, 1.5f, 60f, 65f, 1.5f, Blocks.stone, 0.20f);
 		riverSurface = new SurfaceRiverOasis();
@@ -42,16 +43,18 @@ public class RealisticBiomeStoneMountainsCactus extends RealisticBiomeBase
 	@Override
     public void rDecorate(World world, Random rand, int chunkX, int chunkY, PerlinNoise perlin, CellNoise cell, float strength, float river)
     {
-		for (int i23 = 0; i23 < 1; i23++)
-		{
-			int i1 = chunkX + rand.nextInt(16) + 8;
-			int j1 = chunkY + rand.nextInt(16) + 8;
-		    int k1 = world.getHeightValue(i1, j1);
-		    
-		    if(k1 < 80)
-		    {
-		    	(new WorldGenBlockBlob(Blocks.cobblestone, 0)).generate(world, rand, i1, k1, j1);
-		    }
+		if ( ConfigRWG.enableCobblestoneBoulders ) {
+			for (int i23 = 0; i23 < 1; i23++)
+			{
+				int i1 = chunkX + rand.nextInt(16) + 8;
+				int j1 = chunkY + rand.nextInt(16) + 8;
+				int k1 = world.getHeightValue(i1, j1);
+
+				if(k1 < 80)
+				{
+					(new WorldGenBlockBlob(Blocks.cobblestone, 0)).generate(world, rand, i1, k1, j1);
+				}
+			}
 		}
 		
 		if(river > 0.7f)

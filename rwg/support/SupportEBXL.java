@@ -24,7 +24,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.alpine.get(), RWGBiomes.baseRiverIce,
 					new TerrainMountainRiver(),
-					new SurfaceMountainSnow(Blocks.grass, Blocks.dirt, false, null, 0.45f)
+					new SurfaceMountainSnow(Blocks.grass, Blocks.dirt, false, null, 0.45f),
+					"ebxl_apline"
 				), 
 				BiomeCategory.SNOW
 			);
@@ -37,7 +38,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.autumnwoods.get(), RWGBiomes.baseRiverTemperate,
 					new TerrainHighland(0f, 140f, 68f, 200f),
-					new SurfaceGrassland(BiomeManager.autumnwoods.get().topBlock, BiomeManager.autumnwoods.get().fillerBlock, Blocks.stone, Blocks.cobblestone)
+					new SurfaceGrassland(BiomeManager.autumnwoods.get().topBlock, BiomeManager.autumnwoods.get().fillerBlock, Blocks.stone, Blocks.cobblestone),
+						"ebxl_autumnwoods"
 				), 
 				BiomeCategory.COLD
 			);
@@ -50,7 +52,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.birchforest.get(), RWGBiomes.baseRiverTemperate,
 					new TerrainHilly(230f, 120f, 0f),
-					new SurfaceMountainStone(BiomeManager.birchforest.get().topBlock, BiomeManager.birchforest.get().fillerBlock, false, null, 0.95f)
+					new SurfaceMountainStone(BiomeManager.birchforest.get().topBlock, BiomeManager.birchforest.get().fillerBlock, false, null, 0.95f),
+						"ebxl_birchforest"
 				), 
 				BiomeCategory.COLD
 			);
@@ -63,7 +66,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.extremejungle.get(), RWGBiomes.baseRiverWet,
 					new TerrainSwampMountain(135f, 300f),
-					new SurfaceMountainStone(BiomeManager.extremejungle.get().topBlock, BiomeManager.extremejungle.get().fillerBlock, false, null, 0.95f)
+					new SurfaceMountainStone(BiomeManager.extremejungle.get().topBlock, BiomeManager.extremejungle.get().fillerBlock, false, null, 0.95f),
+						"ebxl_extremejungle"
 				), 
 				BiomeCategory.WET
 			);
@@ -76,7 +80,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.forestedisland.get(), RWGBiomes.baseRiverTemperate,
 					new TerrainGrasslandHills(90f, 180f, 13f, 100f, 1f, 260f, 59f),
-					new SurfaceGrassland(BiomeManager.forestedisland.get().topBlock, BiomeManager.forestedisland.get().fillerBlock, Blocks.stone, Blocks.cobblestone)
+					new SurfaceGrassland(BiomeManager.forestedisland.get().topBlock, BiomeManager.forestedisland.get().fillerBlock, Blocks.stone, Blocks.cobblestone),
+						"ebxl_forestedisland"
 				), 
 				BiomeCategory.COLD
 			);
@@ -89,7 +94,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.forestedhills.get(), RWGBiomes.baseRiverTemperate,
 					new TerrainHilly(230f, 120f, 0f),
-					new SurfaceMountainStone(BiomeManager.forestedhills.get().topBlock, BiomeManager.forestedhills.get().fillerBlock, false, null, 0.95f)
+					new SurfaceMountainStone(BiomeManager.forestedhills.get().topBlock, BiomeManager.forestedhills.get().fillerBlock, false, null, 0.95f),
+						"ebxl_forestedhills"
 				), 
 				BiomeCategory.COLD
 			);
@@ -102,7 +108,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.glacier.get(), RWGBiomes.baseRiverIce,
 					new TerrainGrasslandHills(90f, 180f, 13f, 100f, 38f, 260f, 71f),
-					new SurfaceMountainStone(BiomeManager.glacier.get().topBlock, BiomeManager.glacier.get().fillerBlock, false, null, 0.95f)
+					new SurfaceMountainStone(BiomeManager.glacier.get().topBlock, BiomeManager.glacier.get().fillerBlock, false, null, 0.95f),
+						"ebxl_glacier"
 				), 
 				BiomeCategory.SNOW
 			);
@@ -115,7 +122,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.greenhills.get(), RWGBiomes.baseRiverTemperate,
 					new TerrainHilly(230f, 120f, 0f),
-					new SurfaceMountainStone(BiomeManager.greenhills.get().topBlock, BiomeManager.greenhills.get().fillerBlock, false, null, 0.95f)
+					new SurfaceMountainStone(BiomeManager.greenhills.get().topBlock, BiomeManager.greenhills.get().fillerBlock, false, null, 0.95f),
+						"ebxl_greenhills"
 				), 
 				BiomeCategory.COLD
 			);
@@ -128,7 +136,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.icewasteland.get(), RWGBiomes.baseRiverIce,
 					new TerrainPolar(),
-					new SurfacePolar(BiomeManager.icewasteland.get().topBlock, BiomeManager.icewasteland.get().fillerBlock)
+					new SurfacePolar(BiomeManager.icewasteland.get().topBlock, BiomeManager.icewasteland.get().fillerBlock),
+						"ebxl_icewasteland"
 				), 
 				BiomeCategory.SNOW
 			);
@@ -141,7 +150,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.greenswamp.get(), RWGBiomes.baseRiverWet,
 					new TerrainSwampRiver(),
-					new SurfaceGrassland(BiomeManager.greenswamp.get().topBlock, BiomeManager.greenswamp.get().fillerBlock, Blocks.stone, Blocks.cobblestone)
+					new SurfaceGrassland(BiomeManager.greenswamp.get().topBlock, BiomeManager.greenswamp.get().fillerBlock, Blocks.stone, Blocks.cobblestone),
+						"ebxl_greenswamp"
 				), 
 				BiomeCategory.WET
 			);
@@ -154,7 +164,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.marsh.get(), RWGBiomes.baseRiverWet,
 					new TerrainMarsh(),
-					new SurfaceMarshFix(BiomeManager.marsh.get().topBlock, BiomeManager.marsh.get().fillerBlock, Blocks.stone, Blocks.cobblestone)
+					new SurfaceMarshFix(BiomeManager.marsh.get().topBlock, BiomeManager.marsh.get().fillerBlock, Blocks.stone, Blocks.cobblestone),
+						"ebxl_marsh"
 				), 
 				BiomeCategory.WET
 			);
@@ -167,7 +178,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.meadow.get(), RWGBiomes.baseRiverCold,
 					new TerrainGrasslandHills(90f, 180f, 13f, 100f, 38f, 260f, 71f),
-					new SurfaceGrassland(BiomeManager.meadow.get().topBlock, BiomeManager.meadow.get().fillerBlock, Blocks.stone, Blocks.cobblestone)
+					new SurfaceGrassland(BiomeManager.meadow.get().topBlock, BiomeManager.meadow.get().fillerBlock, Blocks.stone, Blocks.cobblestone),
+						"ebxl_meadow"
 				), 
 				BiomeCategory.COLD
 			);
@@ -180,7 +192,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.minijungle.get(), RWGBiomes.baseRiverWet,
 					new TerrainHighland(0f, 140f, 68f, 200f),
-					new SurfaceGrassland(BiomeManager.minijungle.get().topBlock, BiomeManager.minijungle.get().fillerBlock, Blocks.stone, Blocks.cobblestone)
+					new SurfaceGrassland(BiomeManager.minijungle.get().topBlock, BiomeManager.minijungle.get().fillerBlock, Blocks.stone, Blocks.cobblestone),
+						"ebxl_minijungle"
 				), 
 				BiomeCategory.WET
 			);
@@ -199,7 +212,8 @@ public class SupportEBXL
 					},
 					new EditBase[]{
 						new EditRiverOasis()
-					}
+					},
+						"ebxl_mountaindesert"
 				), 
 				BiomeCategory.HOT
 			);
@@ -218,7 +232,8 @@ public class SupportEBXL
 					},
 					new EditBase[]{
 						new EditRiverOasis()
-					}
+					},
+						"ebxl_mountainridge"
 				), 
 				BiomeCategory.HOT
 			);
@@ -231,7 +246,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.mountaintaiga.get(), RWGBiomes.baseRiverIce,
 					new TerrainMountainSpikes(),
-					new SurfaceMountainStone(BiomeManager.mountaintaiga.get().topBlock, BiomeManager.mountaintaiga.get().fillerBlock, false, null, 1.2f)
+					new SurfaceMountainStone(BiomeManager.mountaintaiga.get().topBlock, BiomeManager.mountaintaiga.get().fillerBlock, false, null, 1.2f),
+						"ebxl_mountaintaiga"
 				), 
 				BiomeCategory.SNOW
 			);
@@ -244,7 +260,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.pineforest.get(), RWGBiomes.baseRiverCold,
 					new TerrainMountainSpikes(),
-					new SurfaceMountainStone(BiomeManager.pineforest.get().topBlock, BiomeManager.pineforest.get().fillerBlock, false, null, 1.2f)
+					new SurfaceMountainStone(BiomeManager.pineforest.get().topBlock, BiomeManager.pineforest.get().fillerBlock, false, null, 1.2f),
+						"ebxl_pineforest"
 				), 
 				BiomeCategory.COLD
 			);
@@ -257,7 +274,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.rainforest.get(), RWGBiomes.baseRiverWet,
 					new TerrainHilly(230f, 100f, 0f),
-					new SurfaceGrassland(BiomeManager.rainforest.get().topBlock, BiomeManager.rainforest.get().fillerBlock, Blocks.stone, Blocks.cobblestone)
+					new SurfaceGrassland(BiomeManager.rainforest.get().topBlock, BiomeManager.rainforest.get().fillerBlock, Blocks.stone, Blocks.cobblestone),
+						"ebxl_rainforest"
 				), 
 				BiomeCategory.WET
 			);
@@ -270,7 +288,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.redwoodforest.get(), RWGBiomes.baseRiverTemperate,
 					new TerrainHilly(230f, 120f, 0f),
-					new SurfaceMountainStone(BiomeManager.redwoodforest.get().topBlock, BiomeManager.redwoodforest.get().fillerBlock, true, Blocks.sand, 0.2f)
+					new SurfaceMountainStone(BiomeManager.redwoodforest.get().topBlock, BiomeManager.redwoodforest.get().fillerBlock, true, Blocks.sand, 0.2f),
+						"ebxl_redwoodforest"
 				), 
 				BiomeCategory.COLD
 			);
@@ -283,7 +302,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.redwoodlush.get(), RWGBiomes.baseRiverWet,
 					new TerrainHilly(230f, 120f, 0f),
-					new SurfaceMountainStone(BiomeManager.redwoodlush.get().topBlock, BiomeManager.redwoodlush.get().fillerBlock, true, Blocks.sand, 0.2f)
+					new SurfaceMountainStone(BiomeManager.redwoodlush.get().topBlock, BiomeManager.redwoodlush.get().fillerBlock, true, Blocks.sand, 0.2f),
+						"ebxl_redwoodlush"
 				), 
 				BiomeCategory.WET
 			);
@@ -296,7 +316,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.savanna.get(), RWGBiomes.baseRiverHot,
 					new TerrainGrasslandFlats(),
-					new SurfaceGrasslandMix1(BiomeManager.savanna.get().topBlock, BiomeManager.savanna.get().fillerBlock, Blocks.sand, Blocks.stone, Blocks.cobblestone, 13f, 0.27f)
+					new SurfaceGrasslandMix1(BiomeManager.savanna.get().topBlock, BiomeManager.savanna.get().fillerBlock, Blocks.sand, Blocks.stone, Blocks.cobblestone, 13f, 0.27f),
+						"ebxl_savanna"
 				), 
 				BiomeCategory.HOT
 			);
@@ -309,7 +330,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.shrubland.get(), RWGBiomes.baseRiverTemperate,
 					new TerrainGrasslandHills(90f, 180f, 13f, 100f, 38f, 260f, 71f),
-					new SurfaceGrassland(BiomeManager.shrubland.get().topBlock, BiomeManager.shrubland.get().fillerBlock, Blocks.stone, Blocks.cobblestone)
+					new SurfaceGrassland(BiomeManager.shrubland.get().topBlock, BiomeManager.shrubland.get().fillerBlock, Blocks.stone, Blocks.cobblestone),
+						"ebxl_shrubland"
 				), 
 				BiomeCategory.COLD
 			);
@@ -322,7 +344,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.snowforest.get(), RWGBiomes.baseRiverIce,
 					new TerrainHighland(0f, 140f, 68f, 200f),
-					new SurfaceGrassland(BiomeManager.snowforest.get().topBlock, BiomeManager.snowforest.get().fillerBlock, Blocks.stone, Blocks.cobblestone)
+					new SurfaceGrassland(BiomeManager.snowforest.get().topBlock, BiomeManager.snowforest.get().fillerBlock, Blocks.stone, Blocks.cobblestone),
+						"ebxl_snowforest"
 				), 
 				BiomeCategory.SNOW
 			);
@@ -335,7 +358,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.snowyrainforest.get(), RWGBiomes.baseRiverIce,
 					new TerrainHilly(230f, 120f, 0f),
-					new SurfaceGrassland(BiomeManager.snowforest.get().topBlock, BiomeManager.snowforest.get().fillerBlock, Blocks.stone, Blocks.cobblestone)
+					new SurfaceGrassland(BiomeManager.snowforest.get().topBlock, BiomeManager.snowforest.get().fillerBlock, Blocks.stone, Blocks.cobblestone),
+						"ebxl_snowyrainforest"
 				), 
 				BiomeCategory.SNOW
 			);
@@ -348,7 +372,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.temperaterainforest.get(), RWGBiomes.baseRiverWet,
 					new TerrainHilly(230f, 120f, 0f),
-					new SurfaceMountainStone(BiomeManager.temperaterainforest.get().topBlock, BiomeManager.temperaterainforest.get().fillerBlock, true, Blocks.sand, 0.2f)
+					new SurfaceMountainStone(BiomeManager.temperaterainforest.get().topBlock, BiomeManager.temperaterainforest.get().fillerBlock, true, Blocks.sand, 0.2f),
+						"ebxl_temperaterainforest"
 				), 
 				BiomeCategory.WET
 			);
@@ -361,7 +386,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.tundra.get(), RWGBiomes.baseRiverCold,
 					new TerrainGrasslandHills(90f, 180f, 13f, 100f, 38f, 260f, 71f),
-					new SurfaceGrassland(BiomeManager.tundra.get().topBlock, BiomeManager.tundra.get().fillerBlock, Blocks.stone, Blocks.cobblestone)
+					new SurfaceGrassland(BiomeManager.tundra.get().topBlock, BiomeManager.tundra.get().fillerBlock, Blocks.stone, Blocks.cobblestone),
+						"ebxl_tundra"
 				), 
 				BiomeCategory.COLD
 			);
@@ -380,7 +406,8 @@ public class SupportEBXL
 					},
 					new EditBase[]{
 						new EditRiverOasis()
-					}
+					},
+						"ebxl_wasteland"
 				), 
 				BiomeCategory.HOT
 			);
@@ -393,7 +420,8 @@ public class SupportEBXL
 				new RealisticBiomeSupport(
 					BiomeManager.woodlands.get(), RWGBiomes.baseRiverTemperate,
 					new TerrainHighland(0f, 140f, 68f, 200f),
-					new SurfaceGrassland(BiomeManager.woodlands.get().topBlock, BiomeManager.woodlands.get().fillerBlock, Blocks.stone, Blocks.cobblestone)
+					new SurfaceGrassland(BiomeManager.woodlands.get().topBlock, BiomeManager.woodlands.get().fillerBlock, Blocks.stone, Blocks.cobblestone),
+						"ebxl_woodlands"
 				), 
 				BiomeCategory.COLD
 			);

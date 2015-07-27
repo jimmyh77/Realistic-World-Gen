@@ -21,7 +21,7 @@ public class RealisticBiomeCoastIce extends RealisticBiomeBase
 	
 	public RealisticBiomeCoastIce() 
 	{
-		super(0, RWGBiomes.baseSnowDesert);
+		super(0, RWGBiomes.baseSnowDesert, "rwg_BiomeCoastIce");
 		
 		surface = new SurfaceGrassland(Blocks.packed_ice, Blocks.packed_ice, Blocks.packed_ice, Blocks.ice);
 	}

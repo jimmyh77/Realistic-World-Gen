@@ -13,6 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenShrub;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import rwg.api.RWGBiomes;
 import rwg.biomes.realistic.RealisticBiomeBase;
+import rwg.config.ConfigRWG;
 import rwg.deco.DecoBlob;
 import rwg.deco.DecoCacti;
 import rwg.deco.DecoFlowers;
@@ -35,7 +36,7 @@ public class RealisticBiomeSavannaForest extends RealisticBiomeBase
 
 	public RealisticBiomeSavannaForest() 
 	{
-		super(0, RWGBiomes.baseHotPlains, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverHot);
+		super(0, RWGBiomes.baseHotPlains, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverHot, "rwg_SavannaForest");
 		terrain = new TerrainGrasslandMountains();
 		surface = new SurfaceMountainStone(Blocks.grass, Blocks.dirt, false, null, 0.6f);
 	}
@@ -43,12 +44,14 @@ public class RealisticBiomeSavannaForest extends RealisticBiomeBase
 	@Override
     public void rDecorate(World world, Random rand, int chunkX, int chunkY, PerlinNoise perlin, CellNoise cell, float strength, float river)
     {
-		for (int i23 = 0; i23 < 1; i23++)
-		{
-			int i1 = chunkX + rand.nextInt(16) + 8;
-			int j1 = chunkY + rand.nextInt(16) + 8;
-		    int k1 = world.getHeightValue(i1, j1);
-			(new WorldGenBlockBlob(Blocks.cobblestone, 0)).generate(world, rand, i1, k1, j1);
+		if ( ConfigRWG.enableCobblestoneBoulders ) {
+			for (int i23 = 0; i23 < 1; i23++)
+			{
+				int i1 = chunkX + rand.nextInt(16) + 8;
+				int j1 = chunkY + rand.nextInt(16) + 8;
+				int k1 = world.getHeightValue(i1, j1);
+				(new WorldGenBlockBlob(Blocks.cobblestone, 0)).generate(world, rand, i1, k1, j1);
+			}
 		}
 		
 		float n = perlin.noise2((chunkX + 1000f) / 150f, chunkY / 150f);

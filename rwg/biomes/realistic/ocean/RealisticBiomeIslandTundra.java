@@ -19,7 +19,7 @@ public class RealisticBiomeIslandTundra extends RealisticBiomeBase
 	
 	public RealisticBiomeIslandTundra() 
 	{
-		super(0, RWGBiomes.baseOceanCold);
+		super(0, RWGBiomes.baseOceanCold, "rwg_IslandTundra");
 		
 		surface = new SurfaceIslandMountainStone(Blocks.grass, Blocks.dirt, 67, Blocks.sand, 0f);
 	}

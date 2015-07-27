@@ -20,7 +20,7 @@ public class RealisticBiomeCoastColdSlope extends RealisticBiomeBase
 {
 	public RealisticBiomeCoastColdSlope() 
 	{
-		super(0, RWGBiomes.baseColdPlains);
+		super(0, RWGBiomes.baseColdPlains, "rwg_CoastColdSlope");
 	}
 	
 	@Override

@@ -38,7 +38,7 @@ public class RealisticBiomeHotForest extends RealisticBiomeBase
 	
 	public RealisticBiomeHotForest() 
 	{
-		super(0, RWGBiomes.baseHotForest, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverHot);
+		super(0, RWGBiomes.baseHotForest, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverHot, "rwg_BiomeHotForest");
 		
 		terrain = new TerrainGrasslandFlats();
 		surface = new SurfaceGrasslandMixBig(Blocks.sand, Blocks.sand, Blocks.grass, Blocks.dirt, Blocks.stone, Blocks.cobblestone, 60f, -0.14f, 14f, 0.25f);

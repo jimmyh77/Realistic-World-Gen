@@ -28,7 +28,7 @@ public class RealisticBiomeJungleHills extends RealisticBiomeBase
 
 	public RealisticBiomeJungleHills() 
 	{
-		super(0, RWGBiomes.baseJungle);
+		super(0, RWGBiomes.baseJungle, "rwg_JungleHills");
 		terrain = new TerrainHilly(230f, 120f, 50f);
 		surface = new SurfaceMountainStone(Blocks.grass, Blocks.dirt, false, null, 1f, 1.5f, 60f, 65f, 1.5f);
 	}

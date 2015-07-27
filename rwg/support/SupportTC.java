@@ -32,7 +32,8 @@ public class SupportTC
 						new RealisticBiomeSupport(
 							b[i], RWGBiomes.baseRiverTemperate,
 							new TerrainSmallSupport(),
-							new SurfaceGrassland(b[i].topBlock, b[i].fillerBlock, Blocks.stone, Blocks.cobblestone)
+							new SurfaceGrassland(b[i].topBlock, b[i].fillerBlock, Blocks.stone, Blocks.cobblestone),
+							b[i].biomeName
 						),
 						BiomeCategory.SMALL
 					);

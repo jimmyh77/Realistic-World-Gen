@@ -34,7 +34,7 @@ public class RealisticBiomeTaigaPlains extends RealisticBiomeBase
 
 	public RealisticBiomeTaigaPlains() 
 	{
-		super(0, RWGBiomes.baseColdForest, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverCold);
+		super(0, RWGBiomes.baseColdForest, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverCold, "rwg_TaigaPlains");
 		
 		terrain = new TerrainFlatLakes();
 		surface = new SurfaceTundra(Blocks.grass, Blocks.dirt);

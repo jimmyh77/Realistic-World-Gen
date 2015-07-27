@@ -34,7 +34,7 @@ public class RealisticBiomeRedDesertMountains extends RealisticBiomeBase
 
 	public RealisticBiomeRedDesertMountains() 
 	{
-		super(0, RWGBiomes.baseHotDesert, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverOasis);
+		super(0, RWGBiomes.baseHotDesert, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverOasis, "rwg_RedDesertMountains");
 		terrain = new TerrainHilly(230f, 120f, 0f);
 		surface = new SurfaceRedDesert();
 		riverSurface = new SurfaceRiverOasis();

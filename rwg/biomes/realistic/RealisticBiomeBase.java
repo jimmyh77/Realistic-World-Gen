@@ -46,6 +46,7 @@ public class RealisticBiomeBase
 	public static RealisticBiomeBase river = new RealisticBiomeTestRiver();
 	
 	public static RealisticBiomeBase ocean = new RealisticBiomeOceanTest();
+	public static RealisticBiomeBase sea = new RealisticBiomeSeaTest();
 	public static RealisticBiomeBase coast = new RealisticBiomeCoastTest();
 	
 	//POLAR =========================================================================================
@@ -116,6 +117,8 @@ public class RealisticBiomeBase
 	
 	//OCEAN =========================================================================================
 	public static RealisticBiomeBase islandTropical = new RealisticBiomeIslandTropical();
+
+	public static RealisticBiomeBase oceanTrench = new RealisticBiomeOceanTrench();
 	
 	// ==============================================================================================
 	
@@ -124,14 +127,17 @@ public class RealisticBiomeBase
 	public final BiomeGenBase baseBiome;
 	public final RealisticBiomeBase beachBiome;
 	public final BiomeGenBase riverBiome;
+
+	public final String name;
 	
-	public RealisticBiomeBase(int sub, BiomeGenBase biome)
+	public RealisticBiomeBase(int sub, BiomeGenBase biome, String name)
 	{
-		this(sub, biome, coastIce, RWGBiomes.baseRiverTemperate);
+		this(sub, biome, coastIce, RWGBiomes.baseRiverTemperate, name);
 	}
 	
-	public RealisticBiomeBase(int sub, BiomeGenBase biome, RealisticBiomeBase coast, BiomeGenBase river)
+	public RealisticBiomeBase(int sub, BiomeGenBase biome, RealisticBiomeBase coast, BiomeGenBase river, String biomeName)
 	{
+		name = biomeName;
 		biomeID = nextBiomeID;
 		biomeList[biomeID] = this;
 		nextBiomeID++;

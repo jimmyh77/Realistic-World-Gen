@@ -30,6 +30,7 @@ import rwg.biomes.realistic.savanna.RealisticBiomeSavannaDunes;
 import rwg.biomes.realistic.savanna.RealisticBiomeSavannaForest;
 import rwg.biomes.realistic.savanna.RealisticBiomeStoneMountains;
 import rwg.biomes.realistic.savanna.RealisticBiomeStoneMountainsCactus;
+import rwg.config.ConfigRWG;
 import rwg.support.Support;
 import rwg.util.CellNoise;
 import rwg.util.PerlinNoise;
@@ -56,12 +57,18 @@ public class ChunkManagerRealistic extends WorldChunkManager
     private ArrayList<RealisticBiomeBase> biomes_wet;
     private ArrayList<RealisticBiomeBase> biomes_small;
     private ArrayList<RealisticBiomeBase> biomes_test;
+
+	private ArrayList<RealisticBiomeBase> biomes_water;
+
     private int biomes_snowLength;
     private int biomes_coldLength;
     private int biomes_hotLength;
     private int biomes_wetLength;
     private int biomes_smallLength;
     private int biomes_testLength;
+	private int biomes_waterLength;
+
+	public World world;
     
     private boolean wetEnabled;
     private boolean smallEnabled;
@@ -78,6 +85,7 @@ public class ChunkManagerRealistic extends WorldChunkManager
     public ChunkManagerRealistic(World par1World)
     {
         this();
+		this.world = par1World;
         long seed = par1World.getSeed();
         
     	perlin = new PerlinNoise(seed);
@@ -91,6 +99,11 @@ public class ChunkManagerRealistic extends WorldChunkManager
     	biomes_wet = new ArrayList<RealisticBiomeBase>();
     	biomes_small = new ArrayList<RealisticBiomeBase>();
     	biomes_test = new ArrayList<RealisticBiomeBase>();
+		biomes_water = new ArrayList<RealisticBiomeBase>();
+
+		biomes_water.add(RealisticBiomeBase.oceanTrench);
+		biomes_water.add(RealisticBiomeBase.ocean);
+
 
     	biomes_snow.add(RealisticBiomeBase.polar);
     	biomes_snow.add(RealisticBiomeBase.snowHills);
@@ -105,9 +118,6 @@ public class ChunkManagerRealistic extends WorldChunkManager
     	biomes_cold.add(RealisticBiomeBase.redwood);
     	biomes_cold.add(RealisticBiomeBase.darkRedwood);
     	biomes_cold.add(RealisticBiomeBase.darkRedwoodPlains);
-    	biomes_cold.add(RealisticBiomeBase.woodhills);
-    	biomes_cold.add(RealisticBiomeBase.woodmountains);
-    	
     	biomes_cold.add(RealisticBiomeBase.woodhills);
     	biomes_cold.add(RealisticBiomeBase.woodmountains);
     	
@@ -143,6 +153,7 @@ public class ChunkManagerRealistic extends WorldChunkManager
     	biomes_wetLength = biomes_wet.size();
     	biomes_smallLength = biomes_small.size();
     	biomes_testLength = biomes_test.size();
+		biomes_waterLength = biomes_water.size();
     	
     	wetEnabled = false;
     	if(biomes_wetLength > 0)
@@ -245,10 +256,82 @@ public class ChunkManagerRealistic extends WorldChunkManager
     	return getBiomeDataAt(par1, par2, getOceanValue(par1, par2));
     }
 
+	public double getBiomeNoiseAt (int par1, int par2 ) {
+
+		double b = (perlin.noise((par1 + 4000f) / ConfigRWG.climate_distance, par2 / ConfigRWG.climate_distance, 1D) * 0.5f) + 0.5f;
+		b = b < 0f ? 0f : b >= 0.9999999f ? 0.9999999f : b;
+
+		return b;
+	}
+
+	public float getSubBiomeNoiseAt (int par1, int par2 ) {
+		double b = getBiomeNoiseAt(par1, par2);
+
+		float h;
+		float s = smallEnabled ? (biomecell.noise(par1 / 140D, par2 / 140D, 1D) * 0.5f) + 0.5f : 0f;
+		if(smallEnabled && s > 0.975f)
+		{
+			h = (s - 0.975f) * 40f;
+			h = h < 0f ? 0f : h >= 0.9999999f ? 0.9999999f : h;
+			h *= biomes_smallLength;
+		}
+		else if((wetEnabled && b < 0.25f) || (!wetEnabled && b < 0.33f))
+		{
+			h = (biomecell.noise(par1 / 450D, par2 / 450D, 1D) * 0.5f) + 0.5f;
+			h = h < 0f ? 0f : h >= 0.9999999f ? 0.9999999f : h;
+
+			h *= biomes_snowLength;
+		}
+		else if((wetEnabled && b < 0.50f) || (!wetEnabled && b < 0.66f))
+		{
+			h = (biomecell.noise(par1 / 450D, par2 / 450D, 1D) * 0.5f) + 0.5f;
+			h = h < 0f ? 0f : h >= 0.9999999f ? 0.9999999f : h;
+
+			h *= biomes_coldLength;
+		}
+		else if((wetEnabled && b < 0.75f) || (!wetEnabled && b < 1f))
+		{
+			h = (biomecell.noise(par1 / 450D, par2 / 450D, 1D) * 0.5f) + 0.5f;
+			h = h < 0f ? 0f : h >= 0.9999999f ? 0.9999999f : h;
+
+			h *= biomes_hotLength;
+		}
+		else if(wetEnabled)
+		{
+			h = (biomecell.noise(par1 / 450D, par2 / 450D, 1D) * 0.5f) + 0.5f;
+			h = h < 0f ? 0f : h >= 0.9999999f ? 0.9999999f : h;
+
+			h *= biomes_wetLength;
+		}
+		else
+		{
+			h = (biomecell.noise(par1 / 450D, par2 / 450D, 1D) * 0.5f) + 0.5f;
+			h = h < 0f ? 0f : h >= 0.9999999f ? 0.9999999f : h;
+
+			h *= biomes_hotLength;
+		}
+
+		return h;
+	}
+
 	private TLongObjectHashMap<RealisticBiomeBase> biomeDataMap = new TLongObjectHashMap<RealisticBiomeBase>();
 
     public RealisticBiomeBase getBiomeDataAt(int par1, int par2, float ocean)
     {
+		if(ocean <= 0.2f) {
+			if ( ocean <= 0.01f ) {
+				/*float h = (biomecell.noise(par1 / 200D, par2 / 200D, 1D) * 0.5f) + 0.5f;
+				h = h < 0f ? 0f : h >= 0.9999999f ? 0.9999999f : h;
+
+				h *= biomes_water.size();
+				return biomes_water.get((int)(h));*/
+
+				return RealisticBiomeBase.ocean;
+
+			}
+			return RealisticBiomeBase.sea;
+		}
+
     	//return RealisticBiomeBase.woodmountains;
     	
     	//return RealisticBiomeBase.hotForest; //rainForestHigh test
@@ -296,9 +379,8 @@ public class ChunkManagerRealistic extends WorldChunkManager
 		}
 
 		RealisticBiomeBase output = null;
-    	
-    	float b = (biomecell.noise((par1 + 4000f) / 1200D, par2 / 1200D, 1D) * 0.5f) + 0.5f;
-    	b = b < 0f ? 0f : b >= 0.9999999f ? 0.9999999f : b;
+
+		double b = getBiomeNoiseAt(par1, par2);
 
     	float s = smallEnabled ? (biomecell.noise(par1 / 140D, par2 / 140D, 1D) * 0.5f) + 0.5f : 0f;
     	if(smallEnabled && s > 0.975f)

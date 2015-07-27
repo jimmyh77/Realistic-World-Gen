@@ -36,7 +36,7 @@ public class RealisticBiomeTest extends RealisticBiomeBase
 	
 	public RealisticBiomeTest() 
 	{
-		super(0, RWGBiomes.baseColdForest);
+		super(0, RWGBiomes.baseColdForest, "rwg_BiomeTest");
 		
 		surface = new SurfaceMountainSnow(Blocks.grass, Blocks.dirt, true, Blocks.sand, 0.2f);
 	}

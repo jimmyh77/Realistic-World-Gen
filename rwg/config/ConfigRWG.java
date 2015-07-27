@@ -24,6 +24,8 @@ public class ConfigRWG
 
 	public static boolean generateEmeralds = true;
 	public static boolean enableCobblestoneBoulders = true;
+
+	public static double climate_distance = 1600D;
 	
 	public static void init(FMLPreInitializationEvent event)
 	{
@@ -68,6 +70,8 @@ public class ConfigRWG
 
 			generateEmeralds = config.getBoolean("Generate Emeralds", "Settings", true, "");
 			enableCobblestoneBoulders = config.getBoolean("Enable Cobblestone Boulders", "Settings", true, "");
+
+			climate_distance = config.get("Settings", "Climate Distance", climate_distance, " [default: " + climate_distance + "]").getDouble();
 		}
 		catch (Exception e) 
 		{

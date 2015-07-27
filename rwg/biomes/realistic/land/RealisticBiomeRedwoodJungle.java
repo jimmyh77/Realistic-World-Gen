@@ -12,6 +12,7 @@ import net.minecraft.world.gen.feature.WorldGenShrub;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import rwg.api.RWGBiomes;
 import rwg.biomes.realistic.RealisticBiomeBase;
+import rwg.config.ConfigRWG;
 import rwg.deco.DecoGrass;
 import rwg.deco.trees.DecoJungleFat;
 import rwg.deco.trees.DecoJungleSmall;
@@ -32,7 +33,7 @@ public class RealisticBiomeRedwoodJungle extends RealisticBiomeBase
 	
 	public RealisticBiomeRedwoodJungle() 
 	{
-		super(0, RWGBiomes.baseJungle);
+		super(0, RWGBiomes.baseJungle, "rwg_RedwoodJungle");
 		terrain = new TerrainHilly(230f, 100f, 0f);
 		surface = new SurfaceGrassland(Blocks.grass, Blocks.dirt, Blocks.stone, Blocks.cobblestone);
 	}
@@ -40,12 +41,15 @@ public class RealisticBiomeRedwoodJungle extends RealisticBiomeBase
 	@Override
     public void rDecorate(World world, Random rand, int chunkX, int chunkY, PerlinNoise perlin, CellNoise cell, float strength, float river)
     {
-		for (int i23 = 0; i23 < 2f * strength; i23++)
-		{
-			int i1 = chunkX + rand.nextInt(16) + 8;
-			int j1 = chunkY + rand.nextInt(16) + 8;
-		    int k1 = world.getHeightValue(i1, j1);
-			(new WorldGenBlockBlob(Blocks.mossy_cobblestone, 0)).generate(world, rand, i1, k1, j1);
+		if ( ConfigRWG.enableCobblestoneBoulders ) {
+
+			for (int i23 = 0; i23 < 2f * strength; i23++)
+			{
+				int i1 = chunkX + rand.nextInt(16) + 8;
+				int j1 = chunkY + rand.nextInt(16) + 8;
+				int k1 = world.getHeightValue(i1, j1);
+				(new WorldGenBlockBlob(Blocks.mossy_cobblestone, 0)).generate(world, rand, i1, k1, j1);
+			}
 		}
 		
 		float l = perlin.noise2(chunkX / 80f, chunkY / 80f) * 34f + 10f;

@@ -32,7 +32,7 @@ public class RealisticBiomeDuneValleyForest extends RealisticBiomeBase
 
 	public RealisticBiomeDuneValleyForest() 
 	{
-		super(0, RWGBiomes.baseHotForest, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverOasis);
+		super(0, RWGBiomes.baseHotForest, RealisticBiomeBase.coastDunes, RWGBiomes.baseRiverOasis, "rwg_DuneValleyForest");
 
 		terrain = new TerrainDuneValley(220f);
 		surface = new SurfaceDuneValley(Blocks.grass, Blocks.dirt, 220f, false, true);

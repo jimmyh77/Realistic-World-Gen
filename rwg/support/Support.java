@@ -55,12 +55,12 @@ public class Support
 		{
 			switch(cat)
 			{
-				case SNOW: biomes_snow.add(b);
-				case COLD: biomes_cold.add(b);
-				case HOT: biomes_hot.add(b);
-				case WET: biomes_wet.add(b);
-				case SMALL: biomes_small.add(b);
-				case TEST: biomes_test.add(b);
+				case SNOW: biomes_snow.add(b); break;
+				case COLD: biomes_cold.add(b); break;
+				case HOT: biomes_hot.add(b); break;
+				case WET: biomes_wet.add(b); break;
+				case SMALL: biomes_small.add(b); break;
+				case TEST: biomes_test.add(b); break;
 			}
 		}
 		catch(Error e)
